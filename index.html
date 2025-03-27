@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learn Your Scales</title>
+
+  <link href="./static/css/Google_Sans.css" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%E2%9C%A8&lt;/text&gt;&lt;/svg&gt;">
+
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+
+
+  <script src="main.js"></script>
+  <head>
+      <style media = "all">
+        body {
+          font-family: 'Noto Sans', sans-serif;
+        }
+        .selectable:hover{
+          /* outline: 3px solid rgb(101, 4, 116); */
+          cursor: pointer;
+          border-radius: 1em;
+          -moz-box-shadow: 0 0 10px #ccc;
+          -webkit-box-shadow: 0 0 10px #ccc;
+          box-shadow: 0 0 10px #978e8e;
+        }
+        .selectable{
+          /* outline: 3px solid rgb(101, 4, 116); */
+          cursor: pointer;
+          border-radius: 1em;
+          -moz-box-shadow: 0 0 10px #eee;
+          -webkit-box-shadow: 0 0 10px #eee;
+          box-shadow: 0 0 10px #cccccc;
+        }
+        .project_author{
+            display:block;
+            text-align: center;
+        }
+       .author_icon{
+            box-shadow: 0 0 1em grey;
+            border-radius: 50%;
+            width:100%;
+        }
+      </style>
+   </head>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body" style="padding-bottom:0;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title text-muted">
+                  Learn Your Scales: Towards Scale-Consistent Generative Novel View Synthesis
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#authors">Fereshteh Forghani</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#authors">Jason J. Yu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#authors">Tristan Aumentado-Armstrong</a><sup>1,3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#authors">Konstantinos G. Derpanis</a><sup>1,2,3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#authors">Marcus A. Brubaker</a><sup>1,2,4</sup>
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block text-muted">{forghani,jjyu,kosta,marcus.brubaker}@yorku.ca,</span>
+            <span class="author-block text-muted"> tristan.a@samsung.com</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>York University,</span>
+            <span class="author-block"><sup>2</sup>Vector Institute for AI,</span>
+            <span class="author-block"><sup>3</sup>Samsung AI Centre Toronto</span>
+            <span class="author-block"><sup>3</sup>Google DeepMind</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <!--<img src="teaser.svg" style="float: right; margin-left:20px; margin-bottom: 10px" width="100%;" />-->
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p class="content has-text-justified">
+            Conventional depth-free multi-view datasets are captured using a moving monocular camera without metric calibration.
+            The scales of camera positions in this monocular setting are ambiguous.
+            Previous methods have acknowledged scale ambiguity in multi-view data via various ad-hoc normalization pre-processing steps, but have not directly analyzed the effect of incorrect scene scales on their application.
+            In this paper, we seek to understand and address the effect of scale ambiguity when used to train generative novel view synthesis methods (GNVS).
+            In GNVS, new views of a scene or object can be minimally synthesized given a single image and are, thus, unconstrained, necessitating the use of generative methods.
+            The generative nature of these models captures all aspects of uncertainty, including any uncertainty of scene scales, which act as nuisance variables for the task.
+            We study the effect of scene scale ambiguity in GNVS when sampled from a single image by isolating its effect on the resulting models and, based on these intuitions, define new metrics that measure the scale inconsistency of generated views.
+            We then propose a framework to estimate scene scales jointly with the GNVS model in an end-to-end fashion.
+            Empirically, we show that our method reduces the scale inconsistency of generated views without the complexity or downsides of previous scale normalization methods.
+            Further, we show that removing this ambiguity improves generated image quality of the resulting GNVS model.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<br/>
+
+<section class="hero teaser" id="authors">
+  <div class="hero-body">
+  <div style="border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;padding-left:2em;padding-right:2em;" class="container is-max-desktop has-text-centered">
+    <br>
+    <h2 class="title">Authors</h2>
+    <div class="row">
+        <div class="col-6" style="flex:0 0 20%;max-width:20%;">
+          <a class="project_author" href="https://fereshtehforghani.github.io/">
+              <img class="author_icon" src="assets/authors/fereshteh.png">
+              <p style="margin-top:0.5em;font-size:1.3em;font-weight:bold;">Fereshteh Forghani</p>
+          </a>
+        </div>
+        <div class="col-6" style="flex:0 0 20%;max-width:20%;">
+            <a class="project_author" href="https://jasonjyu.com/">
+                <img class="author_icon" src="assets/authors/jason_j_yu.png">
+                <p style="margin-top:0.5em;font-size:1.3em;font-weight:bold;">Jason J. Yu</p>
+            </a>
+        </div>
+        <div class="col-6" style="flex:0 0 20%;max-width:20%;">
+            <a class="project_author" href="https://scholar.google.ca/citations?user=mV9zdJMAAAAJ&amp;hl=en">
+                <img class="author_icon" src="assets/authors/Tristan.png">
+                <p style="margin-top:0.5em;font-size:1.3em;font-weight:bold;"> Tristan Aumentado-Armstrong</p>
+            </a>
+        </div>
+        <div class="col-6" style="flex:0 0 20%;max-width:20%;">
+            <a class="project_author" href="https://csprofkgd.github.io/">
+                <img class="author_icon" src="assets/authors/kosta.jpeg">
+                <p style="margin-top:0.5em;font-size:1.3em;font-weight:bold;">Konstantinos G. Derpanis</p>
+            </a>
+        </div>
+        <div class="col-6" style="flex:0 0 20%;max-width:20%;">
+            <a class="project_author" href="https://mbrubake.github.io/">
+                <img class="author_icon" src="assets/authors/marcus_brubaker.png">
+                <p style="margin-top:0.5em;font-size:1.3em;font-weight:bold;">Marcus A. Brubaker</p>
+            </a>
+        </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="hero teaser" id="authors">
+  <div class="hero-body">
+  <div style="border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;padding-left:2em;padding-right:2em;" class="container is-max-desktop has-text-centered">
+    <br>
+    <h2 class="title">Material</h2>
+    <div class="row">
+        <a style="max-width:min(15em,40%);margin:auto;" href="https://arxiv.org/abs/2503.15412">
+            <img style="box-shadow: 0 0 1em grey;" src="assets/paper_preview.png">
+            <p style="margin-top:1em;">arXiv</p>
+        </a>
+        <!-- <a style="max-width:min(15em,40%);margin:auto;margin-left:1em;margin-right:1em;" href="">
+            <img style="border-radius:0.5em;padding:1em;box-shadow: 0 0 1em grey;width:10em;" src="assets/github.svg">
+            <p style="margin-top:1em;">Code(Coming Soon)</p>
+        </a> -->
+        <a style="max-width:min(15em,40%);margin:auto;" href="#BibTeX">
+            <img style="border-radius:0.5em;padding:1em;box-shadow: 0 0 1em grey;" src="assets/BibTeX_logo.svg">
+            <p style="margin-top:1em;">BibTex</p>
+        </a>
+    </div>
+  </div>
+  </div>
+</section>
+
+<br/>
+
+
+<section class="hero teaser">
+  <div class="hero-body">
+  <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+    <br/>
+    <h2 class="title">RealEstate10K Qualitative Scale Noise Edge Maps</h2>
+    <div class="content has-text-justified">
+      <p class="content has-text-justified">
+        This viewer allows individual novel view samples with the same conditioning to be viewed to inspect their entropy.
+        Select a scene from the menu below.
+        Then use the frame controls to automatically loop through the samples to get a sense of the differences between samples.
+        Use the toggle button below the image to highlight regions of interest.
+      </p>
+    </div>
+    <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+      <h4 style="text-align:left;">Scene Selection</h2>
+      <div id='edge-scene-selector' class="row">
+      </div>
+    </div>
+    <br/>
+    <div style='display:none;border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+      <h4 style="text-align:left;">Motion Selection</h2>
+      <div class="row">
+        <div class="col-2"> <div id='edge_selector' onclick='edge_viewer.change_variant("orbit");' class=selectable>Orbit</div> </div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class=col-1 style='flex:0 0 100%;max-width:100%;'>
+        <img id='edge-im' style='width:100%;' src="assets/frames/0090cc64d7b7bb24/0.png">
+        <svg id="box_svg" style="position:absolute;top:0;left:0;width: calc(100% - 30px);margin-left:15px;margin-right:15px;" viewBox="0 0 2020 1295" preserveAspectRatio="xMidYMid meet">
+        </svg>
+      </div>
+    </div>
+    <br/>
+    <div onclick='edge_viewer.toggle_box();' class=selectable>Toggle regions of interest</div>
+    <br/>
+    <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+      <h4 style="text-align:left;">Frame Control (automated playback or manual slider)</h2>
+      <p style="text-align:left;">
+        Notice how the samples from models that use scale learning (two right-most columns) "jitter" less.
+      </p>
+      <div class="row">
+        <div class="col-2"> <div onclick='edge_viewer.stop_anim();' class=selectable>Stop animation</div> </div>
+        <div class="col-2"> <div onclick='edge_viewer.cycle_frames(100);' class=selectable>Play</div> </div>
+      </div>
+      <br/>
+      <div class="row">
+        <input style="width:100%;margin-left:1em;margin-right:1em;" type="range" min="0" max="9" value="0" id='edge_frame_control' oninput='edge_viewer.change_frame(document.getElementById("edge_frame_control").value);'>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX" style="padding-top:0;">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre style="border-radius:1em;"><code>@article{forghani2025learnyourscales,
+      title={Learn Your Scales: Towards Scale-Consistent Generative Novel View Synthesis},
+      author={Forghani, Fereshteh and Yu, Jason J and Aumentado-Armstrong, Tristan and Derpanis, Konstantinos G and Brubaker, Marcus A},
+      journal={arXiv preprint arXiv:2503.15412},
+      year={2025}
+    }</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> and <a href="https://github.com/nesf3d/nesf3d.github.io">NeSF</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
