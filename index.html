@@ -200,7 +200,7 @@
     <h2 class="title">RealEstate10K Qualitative Scale Noise Edge Maps</h2>
     <div class="content has-text-justified">
       <p class="content has-text-justified">
-        This viewer allows individual novel view samples with the same conditioning to be viewed to inspect their entropy.
+        This viewer allows individual novel view samples with the same conditioning information to be viewed to inspect their entropy.
         Select a scene from the menu below.
         Then use the frame controls to automatically loop through the samples to get a sense of the differences between samples.
         Use the toggle button below the image to highlight regions of interest.
@@ -209,13 +209,6 @@
     <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
       <h4 style="text-align:left;">Scene Selection</h2>
       <div id='edge-scene-selector' class="row">
-      </div>
-    </div>
-    <br/>
-    <div style='display:none;border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
-      <h4 style="text-align:left;">Motion Selection</h2>
-      <div class="row">
-        <div class="col-2"> <div id='edge_selector' onclick='edge_viewer.change_variant("orbit");' class=selectable>Orbit</div> </div>
       </div>
     </div>
     <br/>
@@ -241,6 +234,52 @@
       <br/>
       <div class="row">
         <input style="width:100%;margin-left:1em;margin-right:1em;" type="range" min="0" max="9" value="0" id='edge_frame_control' oninput='edge_viewer.change_frame(document.getElementById("edge_frame_control").value);'>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+  <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+    <br/>
+    <h2 class="title">SFC Visualizations</h2>
+    <div class="content has-text-justified">
+      <p class="content has-text-justified">
+        In this viewer, we visualize the components of our proposed method, SFC.
+        Same as the previous viewer, you can select a scene from the menu below, view novel view samples with the same conditioning information, calculated optical flows, and the MAD map generated from the flows. 
+        The control buttons are the same as the above viewer.
+      </p>
+    </div>
+    <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+      <h4 style="text-align:left;">Scene Selection</h2>
+      <div id='sfc-scene-selector' class="row">
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class=col-1 style='flex:0 0 100%;max-width:100%;'>
+        <img id='sfc-im' style='width:100%;' src="assets/sfc/frames/02e6fb86b0172f0b/0.png">
+        <svg id="box_svg" style="position:absolute;top:0;left:0;width: calc(100% - 30px);margin-left:15px;margin-right:15px;" viewBox="0 0 2020 1295" preserveAspectRatio="xMidYMid meet">
+        </svg>
+      </div>
+    </div>
+    <br/>
+    <!-- <div onclick='sfc_viewer.toggle_box();' class=selectable>Toggle regions of interest</div> -->
+    <!-- <br/> -->
+    <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+      <h4 style="text-align:left;">Frame Control (automated playback or manual slider)</h2>
+      <p style="text-align:left;">
+        Notice how the MAD maps of the samples from models that use scale learning (two right-most columns) are darker and their flow maps "fliker" less. 
+      </p>
+      <div class="row">
+        <div class="col-2"> <div onclick='sfc_viewer.stop_anim();' class=selectable>Stop animation</div> </div>
+        <div class="col-2"> <div onclick='sfc_viewer.cycle_frames(100);' class=selectable>Play</div> </div>
+      </div>
+      <br/>
+      <div class="row">
+        <input style="width:100%;margin-left:1em;margin-right:1em;" type="range" min="0" max="9" value="0" id='sfc_frame_control' oninput='sfc_viewer.change_frame(document.getElementById("sfc_frame_control").value);'>
       </div>
     </div>
   </div>
