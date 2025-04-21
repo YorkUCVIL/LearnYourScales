@@ -15,9 +15,17 @@
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="stylesheet" href="./static/css/bootstrap.min.css">
 
-
-  <script src="main.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
+        "three/examples/jsm/controls/OrbitControls.js": "https://unpkg.com/three@0.156.1/examples/jsm/controls/OrbitControls.js"
+      }
+    }
+  </script>
+  <!-- <script src="main.js"></script> -->
   <head>
+      <script type="module" src="main.js"></script>
       <style media = "all">
         body {
           font-family: 'Noto Sans', sans-serif;
@@ -244,8 +252,13 @@
   <div class="hero-body">
   <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
     <br/>
-    <h2 class="title">SFC Visualizations</h2>
+    <h2 class="title">Sample Flow Consistency (SFC)</h2>
     <div class="content has-text-justified">
+      <p class="content has-text-justified">
+        SFC measures scale variability using motion variation among generated images with the same conditioning image and camera pose. 
+        We measure motion by optical flow and use the median absolute deviation (MAD) of them as a proxy to quantify scale uncertainty. 
+        The lower the SFC is, the more consistent scales of the samples are.
+      </p>
       <p class="content has-text-justified">
         In this viewer, we visualize the components of our proposed method, SFC.
         Same as the previous viewer, you can select a scene from the menu below, view novel view samples with the same conditioning information, calculated optical flows, and the MAD map generated from the flows. 
@@ -285,6 +298,41 @@
   </div>
   </div>
 </section>
+
+<br>
+
+<!-- <section class="hero teaser">
+  <div class="hero-body">
+  <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+    <br/>
+    <h2 class="title">Scale-Sensitive Thresholded Symmetric Epipolar Distance (SS-TSED)</h2>
+    <div class="content has-text-justified">
+      <p class="content has-text-justified">
+       SS-TSED computes the TSED between two novel views generated conditioning on the same view with camera poses in different directions can be sensitive to the different scene scales chosen in each generation. 
+      </p>
+    </div>
+</section> -->
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div style='border-radius:1em;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;padding:1em;' class="container is-max-desktop has-text-centered">
+      <br/>
+      <h2 class="title">Scale-Sensitive Thresholded Symmetric Epipolar Distance (SS-TSED)</h2>
+      <div class="content has-text-justified">
+        <p class="content has-text-justified">
+          SS-TSED computes the TSED between two novel views generated conditioning on the same view with camera poses in different directions can be sensitive to the different scene scales chosen in each generation. 
+          An interactive visualization of SS-TSED is provided. 
+          The 3D green and blue points show 3D position of points as "selected" by the green and blue cameras.
+          You can move the cameras by drgging them and see how different scene scales result in the 3D position of a point observed in the conditioning view to be different.
+        </p>
+        <!-- Embed 3D viewer -->
+        <div id="viewer" style="width: 100%; height: 500px; margin-top: 2em; border: 1px solid #ccc; border-radius: 10px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
 
 <section class="section" id="BibTeX" style="padding-top:0;">
   <div class="container is-max-desktop content">
